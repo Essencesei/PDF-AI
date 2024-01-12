@@ -25,8 +25,8 @@ const Landing = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex h-screen items-center">
-        <div className="relative flex h-80 w-80 flex-1 justify-center">
+      <div className="flex h-screen flex-col items-center md:flex-row">
+        <div className="relative hidden h-80 w-80 flex-1 justify-center md:flex">
           <Image src={"/landing.svg"} alt="landing" fill />
         </div>
         <div className="flex flex-1 flex-col  items-center justify-center gap-4">
@@ -41,7 +41,7 @@ const Landing = () => {
         </div>
       </div>
       <div className="mx-4 flex h-screen items-center justify-center ">
-        <ul className="flex gap-4">
+        <ul className="flex flex-col gap-4 md:flex-row">
           {keyFeatures.map((features) => {
             return (
               <li key={features.title}>

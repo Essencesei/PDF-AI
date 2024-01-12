@@ -6,8 +6,8 @@ import React from "react";
 
 const SignIn = () => {
   return (
-    <div className="flex h-screen ">
-      <div className="flex flex-1 items-center justify-center">
+    <div className="flex h-screen flex-col md:flex-row ">
+      <div className="hidden flex-1 items-center justify-center md:flex ">
         <div className="relative  h-60 w-60 ">
           <Image src="/welcome.svg" alt="welcome" fill></Image>
         </div>
