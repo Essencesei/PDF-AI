@@ -71,7 +71,7 @@ const CurrentFile = ({ props }: CurrentFileProps) => {
         <ResizableHandle withHandle />
         <ResizablePanel defaultSize={50}>
           {file ? (
-            <iframe src={file} className="h-full w-full" />
+            <embed src={file} className="h-full w-full" />
           ) : (
             <span className="flex h-full items-center justify-center">
               <p>Please select or upload a pdf file</p>

@@ -10,7 +10,7 @@ const Dashboard = async () => {
   const files = await getFiles(session?.user.id!);
 
   return (
-    <div className="h-[90vh]">
+    <div className="h-[85vh]">
       <CurrentFile props={{ files: files }}></CurrentFile>
     </div>
   );
