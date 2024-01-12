@@ -1,3 +1,30 @@
+# PDF AI
+
+Empower your documents with intelligent insights using PDF AI, a Next.js application integrated with Prisma, MongoDB, and the OpenAI API.
+
+## Features
+
+- **Document Intelligence:** Extract meaningful insights from PDF files.
+- **User-Friendly Interface:** Easily upload PDFs and engage in interactive conversations.
+- **Next.js Integration:** Responsive and dynamic user experience.
+- **Prisma Database:** Efficiently manage document data for scalability.
+- **MongoDB Integration:** Flexible and scalable storage of document-related information.
+- **OpenAI API Chat:** Communicate with PDFs for natural language interactions.
+
+## How to Use
+
+1. **Upload PDFs:** Use the user-friendly interface to upload your PDF documents.
+2. **Chat with Documents:** Initiate conversations with your documents using the integrated OpenAI API.
+3. **Intelligent Insights:** Receive intelligent insights and analysis from your documents.
+
+## Technologies Used
+
+- Next.js
+- Prisma
+- MongoDB
+- OpenAI API
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
