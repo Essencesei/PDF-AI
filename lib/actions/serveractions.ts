@@ -26,6 +26,13 @@ export const deleteFile = async (mongoid: string, utId: string) => {
   revalidatePath("/dashboard");
 };
 
+export const getFileById = async (fileId: string) => {
+  const data = await prisma.uploads.findUnique({
+    where: { id: fileId },
+  });
+  return data;
+};
+
 export const upload = async (
   fileUrl: string,
   fileKey: string,

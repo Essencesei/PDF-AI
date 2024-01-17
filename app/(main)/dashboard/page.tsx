@@ -1,19 +1,7 @@
-import { Button } from "@/components/ui/button";
-import authOptions from "@/lib/actions/authOptions";
-import { getFiles } from "@/lib/actions/serveractions";
-import { getServerSession } from "next-auth";
-import React, { useState } from "react";
-import CurrentFile from "./currentFile";
-
-const Dashboard = async () => {
-  const session = await getServerSession(authOptions);
-  const files = await getFiles(session?.user.id!);
-
+export default async function dashboard() {
   return (
-    <div className="h-[85vh]">
-      <CurrentFile props={{ files: files }}></CurrentFile>
+    <div className="flex h-full items-center justify-center">
+      <h2>Please select or upload a pdf file</h2>
     </div>
   );
-};
-
-export default Dashboard;
+}

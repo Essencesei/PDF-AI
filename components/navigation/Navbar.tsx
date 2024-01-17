@@ -1,32 +1,26 @@
-"use client";
-import { FileText, FileUp, LogOut } from "lucide-react";
 import React from "react";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
-
 import Dropzone from "../upload/UploadDropzone";
 import { ModeToggle } from "../mode/ModeToggle";
-import { Button, buttonVariants } from "../ui/button";
-import { signOut } from "next-auth/react";
+import SignOutButton from "./SignOutButton";
+import FileLists from "@/app/(main)/dashboard/FileLists";
+import authOptions from "@/lib/actions/authOptions";
+import { getFiles } from "@/lib/actions/serveractions";
+import { getServerSession } from "next-auth";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const session = await getServerSession(authOptions);
+  if (!session) throw Error("No session found");
+  const files = await getFiles(session.user.id);
+
   return (
     <div className="sticky top-0 flex bg-inherit p-4">
       <h2 className="flex items-center gap-2 font-bold">
-        <FileText />
-        PDF AI
+        <FileLists props={{ files }} />
       </h2>
-
       <div className="ml-auto flex gap-2">
         <ModeToggle />
-
         <Dropzone />
-        <Button
-          variant={"outline"}
-          size={"icon"}
-          onClick={() => signOut({ callbackUrl: "/sign-in" })}
-        >
-          <LogOut />
-        </Button>
+        <SignOutButton />
       </div>
     </div>
   );

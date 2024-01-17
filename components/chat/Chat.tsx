@@ -1,19 +1,22 @@
 "use client";
-
 import { useChat } from "ai/react";
 import { Input } from "../ui/input";
-import { useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { Bot, MoreHorizontal, PlusCircle, User } from "lucide-react";
+import { Bot, MoreHorizontal, User } from "lucide-react";
 
-export default function Chat() {
-  const searchParams = useSearchParams();
+type ChatProps = {
+  props: {
+    fileUrl: string;
+  };
+};
+
+export default function Chat({ props }: ChatProps) {
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
     useChat({
       body: {
-        pdf: searchParams.get("pdf"),
+        fileUrl: props.fileUrl,
       },
     });
 
@@ -37,7 +40,7 @@ export default function Chat() {
               className="gap-2 whitespace-pre-wrap rounded-md border p-2"
             >
               <span className="flex flex-col gap-2">
-                {m.role === "user" ? <User /> : <Bot />}
+                {m.role === "user" ? <p className="font-bold">You</p> : <Bot />}
                 {m.content}
               </span>
             </div>

@@ -12,7 +12,7 @@ import { FileUp } from "lucide-react";
 import { UploadDropzone } from "@/lib/uploadthing";
 import { useSession } from "next-auth/react";
 import { upload } from "@/lib/actions/serveractions";
-import { toast, useToast } from "../ui/use-toast";
+import { useToast } from "../ui/use-toast";
 import { Button } from "../ui/button";
 
 const Dropzone = () => {
@@ -26,7 +26,7 @@ const Dropzone = () => {
           <FileUp />
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="rounded-md">
         <DialogHeader>Upload PDF</DialogHeader>
         <UploadDropzone
           config={{ mode: "auto" }}

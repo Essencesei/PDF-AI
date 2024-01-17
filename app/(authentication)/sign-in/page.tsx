@@ -1,8 +1,8 @@
-"use client";
 import { Button } from "@/components/ui/button";
-import { signIn } from "next-auth/react";
+import { Loader2 } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import SignInButton from "./SIgnInButton";
 
 const SignIn = () => {
   return (
@@ -14,9 +14,7 @@ const SignIn = () => {
       </div>
       <div className="flex flex-1 flex-col items-center justify-center gap-4">
         <h2 className="text-xl font-bold">Welcome Back!</h2>
-        <Button onClick={() => signIn("google", { callbackUrl: "/dashboard" })}>
-          Sign in with Google
-        </Button>
+        <SignInButton />
       </div>
     </div>
   );

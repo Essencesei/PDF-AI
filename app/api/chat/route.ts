@@ -10,11 +10,11 @@ import { OpenAIStream, StreamingTextResponse } from "ai";
 // export const runtime = "edge";
 
 export async function POST(req: Request) {
-  const { messages, pdf } = await req.json();
+  const { messages, fileUrl } = await req.json();
 
   const truncatedMessages = messages.slice(-10);
 
-  const pdfData = await currentPdf(pdf);
+  const pdfData = await currentPdf(fileUrl);
 
   const textPdf = pdfData[0].pageContent;
 
